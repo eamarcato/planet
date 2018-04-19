@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+* { margin:0px; padding:0px; border:none; overflow-x:hidden; }
+img { position:relative; left:50%; transform:translateX(-50%); width: 100%; }
+.header {position: fixed; top: 0; z-index: 10; transform: translateX(-50%) translateY(-100%); transition: all 400ms ease }
+.header.fixed { transform: translateX(-50%) translateY(0); }
+.footer {position: fixed; bottom: 0; z-index: 10;}
+</style>
+</head>
+<body>
+    <!-- <a href="2.html"> -->
+   <img class="header" src="topo.png">
+   <img class="main" src="1.png">
+    <!-- <img class="footer" src="menu.png"> -->
+  </a>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var header = $('.header');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 500) {
+      header.addClass('fixed');
+    } else {
+      header.removeClass('fixed');
+    }
+  });
+</script>
+</html>
